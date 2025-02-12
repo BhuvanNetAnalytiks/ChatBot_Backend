@@ -20,6 +20,9 @@
         "endpoint": "/create_servicenow_incident",
         "methods": ["POST"],
         "parameters": ["description", "urgency", "impact"]
+      },
+      {
+        
       }
   ]
 }
