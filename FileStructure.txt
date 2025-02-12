@@ -1,13 +1,12 @@
-├── backend/                   # Python Backend
-│   ├── main_library/          # Main library with predefined functions
+├── backend/                    # Python Backend
+│   ├── main_library/            # Main library with predefined functions
 │   │   ├── __init__.py
-│   │   ├── function1.py       # Example function 1
-│   │   ├── function2.py       # Example function 2
-│   │   └── utils.py           # Utility functions
-│   ├── orchestrations/        # Dynamically generated orchestration files
-│   ├── app.py                 # Flask/FastAPI server 
-|   |--- orchestration.JSON
-│   ├── orchestrate.py         # Logic to create new Python files
-│   ├── .env                   # Environment variables file
-│   ├── .env.example           # Example environment variables file
-│   └── requirements.txt
+│   │   ├── function1.py         # Example function 1
+│   │   ├── function2.py         # Example function 2
+│   │   └── utils.py             # Utility functions
+│   ├── orchestrations/          # Dynamically generated orchestration files
+│   ├── app.py                   # Flask/FastAPI server
+│   ├── orchestration.json       # Orchestration configuration file (corrected extension)
+│   ├── orchestration_generator.py # Logic to create new Python files
+│   ├── .env                     # Environment variables file
+│   └── requirements.txt         # Dependencies for the backend
