@@ -1,2 +1,5 @@
 #virtual environment 
 *myenv
+
+#Generated_orchestartion_file as it changes everytime we run app.py file
+/orchestrations/*
