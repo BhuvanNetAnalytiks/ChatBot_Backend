@@ -1,14 +1,16 @@
 {
-    "steps": [
+  "steps": [
       {
-        "function": "function1",
-        "endpoint": "/api/function1",
-        "methods": ["GET"]
+          "function": "function",
+          "module": "main_library.function1",
+          "endpoint": "/run_function1",
+          "methods": ["POST"]
       },
       {
-        "function": "function2",
-        "endpoint": "/api/function2",
-        "methods": ["POST"]
+          "function": "function2",
+          "module": "main_library.function2",
+          "endpoint": "/run_function2",
+          "methods": ["GET"]
       }
-    ]
-  }
+  ]
+}

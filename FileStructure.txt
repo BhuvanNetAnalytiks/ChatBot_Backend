@@ -5,7 +5,8 @@
 │   │   ├── function2.py       # Example function 2
 │   │   └── utils.py           # Utility functions
 │   ├── orchestrations/        # Dynamically generated orchestration files
-│   ├── app.py                 # Flask/FastAPI server
+│   ├── app.py                 # Flask/FastAPI server 
+|   |--- orchestration.JSON
 │   ├── orchestrate.py         # Logic to create new Python files
 │   ├── .env                   # Environment variables file
 │   ├── .env.example           # Example environment variables file
