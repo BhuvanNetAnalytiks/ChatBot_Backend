@@ -1,0 +1,14 @@
+{
+    "steps": [
+      {
+        "function": "function1",
+        "endpoint": "/api/function1",
+        "methods": ["GET"]
+      },
+      {
+        "function": "function2",
+        "endpoint": "/api/function2",
+        "methods": ["POST"]
+      }
+    ]
+  }
