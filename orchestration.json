@@ -4,13 +4,22 @@
           "function": "function",
           "module": "main_library.function1",
           "endpoint": "/run_function1",
-          "methods": ["POST"]
+          "methods": ["POST"],
+          "parameters": []
       },
       {
           "function": "function2",
           "module": "main_library.function2",
           "endpoint": "/run_function2",
-          "methods": ["GET"]
+          "methods": ["GET"],
+          "parameters": []
+      },
+      {
+        "function": "create_servicenow_incident",
+        "module": "main_library.create_servicenow_incidenet",
+        "endpoint": "/create_servicenow_incident",
+        "methods": ["POST"],
+        "parameters": ["description", "urgency", "impact"]
       }
   ]
 }

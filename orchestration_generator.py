@@ -10,7 +10,6 @@ def create_orchestration(orchestration_json):
     file_content = (
         "from flask import Flask, jsonify, request\n"
         "import os\n"
-        "from dotenv import load_dotenv\n"
         "import sys\n\n"
         "sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), \"..\")))\n\n"
         "app = Flask(__name__)\n\n"
@@ -24,6 +23,7 @@ def create_orchestration(orchestration_json):
         module_path = step["module"]
         endpoint = step["endpoint"]
         methods = step.get("methods", ["GET"])  # Default to GET if not specified
+        parameters = step.get("parameters", [])
 
         # Avoid duplicate imports
         if func_name not in imported_functions:
@@ -33,8 +33,26 @@ def create_orchestration(orchestration_json):
         # Add route for the function
         file_content += f"\n@app.route('{endpoint}', methods={methods})\n"
         file_content += f"def {func_name}_api():\n"
-        file_content += f"    params = request.json if request.is_json else request.args\n"
-        file_content += f"    result = {func_name}(**params)\n"
+        
+        if parameters:
+            file_content += f"    if request.is_json:\n"
+            file_content += f"        params = request.get_json()\n"
+            file_content += f"    else:\n"
+            file_content += f"        params = request.form.to_dict()\n\n"
+            
+            # Extract parameters with default values if not provided
+            param_extraction = "\n".join(
+                [f"    {param} = params.get('{param}', 'default_value')" for param in parameters]
+            )
+            file_content += param_extraction + "\n\n"
+            
+            # Call the function with extracted parameters
+            param_list = ", ".join(parameters)
+            file_content += f"    result = {func_name}({param_list})\n"
+        else:
+            file_content += f"    # Call the function without parameters\n"
+            file_content += f"    result = {func_name}()\n"
+        
         file_content += "    return jsonify({'result': result})\n\n"
 
     # Final Flask app run
