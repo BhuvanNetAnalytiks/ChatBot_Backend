@@ -54,5 +54,22 @@ def create_zendesk_ticket_api():
     result = create_zendesk_ticket(subject, description, priority)
     return jsonify({'result': result})
 
+from main_library.create_jira_incident import create_jira_ticket
+
+@app.route('/create_jira_incident', methods=['POST'])
+def create_jira_ticket_api():
+    if request.is_json:
+        params = request.get_json()
+    else:
+        params = request.form.to_dict()
+
+    project_key = params.get('project_key', 'default_value')
+    summary = params.get('summary', 'default_value')
+    description = params.get('description', 'default_value')
+    issuetype = params.get('issuetype', 'default_value')
+
+    result = create_jira_ticket(project_key, summary, description, issuetype)
+    return jsonify({'result': result})
+
 if __name__ == '__main__':
     app.run(debug=True)
