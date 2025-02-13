@@ -71,5 +71,20 @@ def create_jira_ticket_api():
     result = create_jira_ticket(project_key, summary, description, issuetype)
     return jsonify({'result': result})
 
+from main_library.llm_claude import query_claude_llm
+
+@app.route('/llm_claude', methods=['POST'])
+def query_claude_llm_api():
+    if request.is_json:
+        params = request.get_json()
+    else:
+        params = request.form.to_dict()
+
+    question = params.get('question', 'default_value')
+    context = params.get('context', 'default_value')
+
+    result = query_claude_llm(question, context)
+    return jsonify({'result': result})
+
 if __name__ == '__main__':
     app.run(debug=True)
