@@ -38,5 +38,21 @@ def create_servicenow_incident_api():
     result = create_servicenow_incident(description, urgency, impact)
     return jsonify({'result': result})
 
+from main_library.create_zendesk_incident import create_zendesk_ticket
+
+@app.route('/create_zendesk_incident', methods=['POST'])
+def create_zendesk_ticket_api():
+    if request.is_json:
+        params = request.get_json()
+    else:
+        params = request.form.to_dict()
+
+    subject = params.get('subject', 'default_value')
+    description = params.get('description', 'default_value')
+    priority = params.get('priority', 'default_value')
+
+    result = create_zendesk_ticket(subject, description, priority)
+    return jsonify({'result': result})
+
 if __name__ == '__main__':
     app.run(debug=True)

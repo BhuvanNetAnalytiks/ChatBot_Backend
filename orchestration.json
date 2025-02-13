@@ -22,7 +22,11 @@
         "parameters": ["description", "urgency", "impact"]
       },
       {
-        
+        "function": "create_zendesk_ticket",
+        "module": "main_library.create_zendesk_incident",
+        "endpoint": "/create_zendesk_incident",
+        "methods": ["POST"],
+        "parameters": ["subject", "description", "priority"]
       }
   ]
 }
