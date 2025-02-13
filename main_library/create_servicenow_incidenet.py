@@ -7,7 +7,7 @@ SERVICE_NOW_INSTANCE = os.getenv('SERVICE_NOW_INSTANCE')
 SERVICE_NOW_USER = os.getenv('SERVICE_NOW_USER')
 SERVICE_NOW_PASSWORD = os.getenv('SERVICE_NOW_PASSWORD')
 
-def create_servicenow_incident(description, urgency='2', impact='2'):
+def create_servicenow_incident(description="Some problem", urgency='2', impact='2'):
    
     url = f'{SERVICE_NOW_INSTANCE}/api/now/table/incident'
     headers = {

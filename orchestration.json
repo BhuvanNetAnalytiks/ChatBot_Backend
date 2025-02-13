@@ -27,6 +27,13 @@
         "endpoint": "/create_zendesk_incident",
         "methods": ["POST"],
         "parameters": ["subject", "description", "priority"]
+      },
+      {
+        "function": "create_jira_ticket",
+        "module": "main_library.create_jira_incident",
+        "endpoint": "/create_jira_incident",
+        "methods": ["POST"],
+        "parameters": ["project_key", "summary", "description","issuetype"]
       }
   ]
 }
