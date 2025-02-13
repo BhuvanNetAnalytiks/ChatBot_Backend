@@ -34,6 +34,13 @@
         "endpoint": "/create_jira_incident",
         "methods": ["POST"],
         "parameters": ["project_key", "summary", "description","issuetype"]
+      },
+      {
+         "function":"query_claude_llm",
+          "module":"main_library.llm_claude",
+          "endpoint":"/llm_claude",
+          "methods":["POST"],
+          "parameters":["question","context"]
       }
   ]
 }
