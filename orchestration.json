@@ -41,6 +41,13 @@
           "endpoint":"/llm_claude",
           "methods":["POST"],
           "parameters":["question","context"]
+      },
+      {
+        "function": "query_gemini_llm",
+        "module": "main_library.llm_gemini_flash",
+        "endpoint": "/query_gemini_llm",
+        "methods": ["POST"],
+        "parameters": ["question", "context"]
       }
   ]
 }
