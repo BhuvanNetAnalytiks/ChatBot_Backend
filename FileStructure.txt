@@ -1,9 +1,20 @@
 ├── backend/                    # Python Backend
 │   ├── main_library/            # Main library with predefined functions
 │   │   ├── __init__.py
-│   │   ├── function1.py         # Example function 1
-│   │   ├── function2.py         # Example function 2
-│   │   └── utils.py             # Utility functions
+│   │   ├── function1.py                   # Example function 1
+│   │   ├── function2.py                   # Example function 2
+│   │   ├── create_jira_incident.py        # To create ticket in Jira
+│   │   ├── create_servicenow_incident.py  # To create ticket in Servicenow
+│   │   ├── create_zendesk_incident.py     # To create ticket in Zendesk
+│   │   ├── llm_claude.py                  # LLM Selected Claude
+│   │   ├── llm_gemini_flash.py            # LLM Selected Gemini_Flash
+│   │   ├── llm_openai.py                  # LLM Selected Openai
+│   │   ├── upload_files_chroma.py         # Vectordata Selected Chroma
+│   │   ├── upload_files_faiss.py          # Vectordata Selected Faiss
+│   │   ├── upload_files_pinecone.py       # Vectordata Selected Pinecone
+│   │   ├── upload_files_weaviate.py       # Vectordata Selected Weaviate
+│   │   │         
+│   │   └── utils.py                       # Utility functions
 │   ├── orchestrations/          # Dynamically generated orchestration files
 │   ├── app.py                   # Flask/FastAPI server
 │   ├── orchestration.json       # Orchestration configuration file (corrected extension)
