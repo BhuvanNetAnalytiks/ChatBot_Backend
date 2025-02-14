@@ -48,6 +48,12 @@
         "endpoint": "/query_gemini_llm",
         "methods": ["POST"],
         "parameters": ["question", "context"]
-      }
+      },
+      {
+        "function":"get_servicenow_incident",
+        "module":"main_library.view_servicenow_incident",
+        "endpoint":"/view_servicenow_incident",
+        "methods":["GET"],
+        "parameters":["incident_id"]}
   ]
 }
