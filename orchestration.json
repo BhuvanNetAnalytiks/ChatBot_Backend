@@ -50,10 +50,10 @@
         "parameters": ["question", "context"]
       },
       {
-        "function":"get_servicenow_incident",
+        "function":"view_ticket_detailed",
         "module":"main_library.view_servicenow_incident",
         "endpoint":"/view_servicenow_incident",
         "methods":["GET"],
-        "parameters":["incident_id"]}
+        "parameters":["incident_id","sys_id"]}
   ]
 }
