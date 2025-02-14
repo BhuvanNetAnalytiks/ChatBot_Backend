@@ -8,3 +8,7 @@ weaviate-client
 sentence-transformers
 PyPDF2
 tqdm
+faiss-cpu 
+pypdf  
+numpy
+chromadb

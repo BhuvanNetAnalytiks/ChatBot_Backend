@@ -36,7 +36,7 @@
         "parameters": ["project_key", "summary", "description","issuetype"]
       },
       {
-         "function":"query_claude_llm",
+         "function":"query_cl aude_llm",
           "module":"main_library.llm_claude",
           "endpoint":"/llm_claude",
           "methods":["POST"],
