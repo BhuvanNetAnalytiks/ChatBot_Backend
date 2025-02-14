@@ -5,8 +5,8 @@
 /orchestrations/*
 
 #ignoring pycache file 
-orchestrations/__pycache__/
-main_library/__pycache__/
+orchestrations/*__pycache__/
+main_library/*__pycache__/
 
 #ignoring the environment file
 *.env

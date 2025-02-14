@@ -4,3 +4,7 @@ python-dotenv
 openai==0.28
 anthropic
 google-generativeai
+weaviate-client
+sentence-transformers
+PyPDF2
+tqdm
