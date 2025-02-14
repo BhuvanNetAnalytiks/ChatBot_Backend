@@ -1,12 +1,15 @@
 #virtual environment 
 *myenv
 
-#Generated_orchestartion_file as it changes everytime we run app.py file
-/orchestrations/*
-
 #ignoring pycache file 
 orchestrations/*__pycache__/
 main_library/*__pycache__/
 
 #ignoring the environment file
 *.env
+
+# Ignore the entire orchestrations folder and its contents
+/orchestrations/
+/orchestrations/*
+orchestrations/
+C:/Users/SPURGE/Desktop/PrOjEcTs/ChatBot_Backend/orchestrations/*
