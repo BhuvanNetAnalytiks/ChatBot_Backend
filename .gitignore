@@ -9,5 +9,4 @@ main_library/*__pycache__/
 *.env
 
 # Ignore the entire orchestrations folder and its contents
-/orchestrations/
-
+/orchestrations/*
