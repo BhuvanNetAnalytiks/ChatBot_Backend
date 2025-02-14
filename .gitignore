@@ -10,6 +10,4 @@ main_library/*__pycache__/
 
 # Ignore the entire orchestrations folder and its contents
 /orchestrations/
-/orchestrations/*
-orchestrations/
-C:/Users/SPURGE/Desktop/PrOjEcTs/ChatBot_Backend/orchestrations/*
+
