@@ -19,49 +19,124 @@
         "module": "main_library.create_servicenow_incidenet",
         "endpoint": "/create_servicenow_incident",
         "methods": ["POST"],
-        "parameters": ["description", "urgency", "impact"]
+        "parameters":[
+          {
+            "name": "description",
+            "type": "body"
+          },
+          {
+            "name": "urgency",
+            "type": "body"
+          },
+          {
+            "name": "impact",
+            "type": "body"
+          }
+        ]
       },
       {
         "function": "create_zendesk_ticket",
         "module": "main_library.create_zendesk_incident",
         "endpoint": "/create_zendesk_incident",
         "methods": ["POST"],
-        "parameters": ["subject", "description", "priority"]
+        "parameters":[
+          {
+            "name": "subject",
+            "type": "body"
+          },
+          {
+            "name": "description",
+            "type": "body"
+          },
+          {
+            "name": "priority",
+            "type": "body"
+          }
+        ]
       },
       {
         "function": "create_jira_ticket",
         "module": "main_library.create_jira_incident",
         "endpoint": "/create_jira_incident",
         "methods": ["POST"],
-        "parameters": ["project_key", "summary", "description","issuetype"]
+        "parameters": [
+          {
+            "name": "project_key",
+            "type": "body"
+          },
+          {
+            "name": "summary",
+            "type": "body"  
+          },
+          {
+            "name": "description",
+            "type": "body"
+          },
+          {
+            "name": "issuetype",
+            "type": "body"
+          }
+        ]
       },
       {
          "function":"query_claude_llm",
           "module":"main_library.llm_claude",
           "endpoint":"/llm_claude",
           "methods":["POST"],
-          "parameters":["question","context"]
+          "parameters":[
+            {
+              "name": "question",
+              "type": "body"
+            },
+            {
+              "name": "context",
+              "type": "body"
+            }
+          ]
       },
       {
         "function": "query_gemini_llm",
         "module": "main_library.llm_gemini_flash",
         "endpoint": "/query_gemini_llm",
         "methods": ["POST"],
-        "parameters": ["question", "context"]
+        "parameters":[
+          {
+            "name": "question",
+            "type": "body"
+          },
+          {
+            "name": "context",
+            "type": "body"
+          }
+        ]
       },
       {
         "function":"view_ticket_detailed",
         "module":"main_library.view_servicenow_incident",
         "endpoint":"/view_servicenow_incident",
         "methods":["GET"],
-        "parameters":["incident_id","sys_id"]
+        "parameters": [
+          {
+            "name": "incident_id",
+            "type": "body"
+          },
+          {
+            "name": "sys_id",
+            "type": "body"
+          }
+        ]
       },
       {
         "function":"view_zendesk_ticket_detailed",
         "module":"main_library.view_zendesk_incident",
         "endpoint":"/view_zendesk_incident",
         "methods":["GET"],
-        "parameters":["ticket_id"]
+        "parameters":[
+          {
+            "name": "ticket_id",
+            "type": "body"
+          }
+        ]
       },
       {
         "function": "get_auth_url",
@@ -75,14 +150,20 @@
         "module": "main_library.microsoft_auth_graph_api",
         "endpoint": "/getAToken",
         "methods": ["GET"],
-        "parameters": ["code", "error", "error_description"]
-      },
-      {
-        "function": "get_user_details",
-        "module": "main_library.microsoft_auth_graph_api",
-        "endpoint": "/get_user_details",
-        "methods": ["POST"],
-        "parameters": ["access_token"]
+        "parameters":[
+          {
+            "name": "code", 
+            "type": "query"
+          },
+          {
+            "name": "error",
+            "type": "query"
+          },
+          {
+            "name": "error_description",
+            "type": "query"
+          }
+        ]
       }
   ]
 }
