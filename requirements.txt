@@ -12,3 +12,4 @@ faiss-cpu
 pypdf  
 numpy
 chromadb
+msal
