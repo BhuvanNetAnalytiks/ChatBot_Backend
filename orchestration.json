@@ -54,6 +54,14 @@
         "module":"main_library.view_servicenow_incident",
         "endpoint":"/view_servicenow_incident",
         "methods":["GET"],
-        "parameters":["incident_id","sys_id"]}
+        "parameters":["incident_id","sys_id"]
+      },
+      {
+        "function":"view_zendesk_ticket_detailed",
+        "module":"main_library.view_zendesk_incident",
+        "endpoint":"/view_zendesk_incident",
+        "methods":["GET"],
+        "parameters":["ticket_id"]
+      }
   ]
 }
