@@ -62,6 +62,27 @@
         "endpoint":"/view_zendesk_incident",
         "methods":["GET"],
         "parameters":["ticket_id"]
+      },
+      {
+        "function": "get_auth_url",
+        "module": "main_library.microsoft_auth_graph_api",
+        "endpoint": "/microsoft/login",
+        "methods": ["GET"],
+        "parameters": []
+      },
+      {
+        "function": "handle_callback",
+        "module": "main_library.microsoft_auth_graph_api",
+        "endpoint": "/getAToken",
+        "methods": ["GET"],
+        "parameters": ["code", "error", "error_description"]
+      },
+      {
+        "function": "get_user_details",
+        "module": "main_library.microsoft_auth_graph_api",
+        "endpoint": "/get_user_details",
+        "methods": ["POST"],
+        "parameters": ["access_token"]
       }
   ]
 }
