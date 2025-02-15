@@ -13,6 +13,8 @@
 │   │   ├── upload_files_faiss.py          # Vectordata Selected Faiss
 │   │   ├── upload_files_pinecone.py       # Vectordata Selected Pinecone
 │   │   ├── upload_files_weaviate.py       # Vectordata Selected Weaviate
+│   │   ├── view_zendesk_incident.py       # To view ticket details of Zendesk
+│   │   ├── view_servicenow_incident.py    # To view ticket details of Servicenow
 │   │   │         
 │   │   └── utils.py                       # Utility functions
 │   ├── orchestrations/                    
