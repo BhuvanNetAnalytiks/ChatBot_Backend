@@ -1,5 +1,6 @@
 from msal import ConfidentialClientApplication
 import requests
+import webbrowser
 from dotenv import load_dotenv
 import os
 
@@ -32,6 +33,8 @@ def get_auth_url():
             redirect_uri=REDIRECT_URI,
             state=os.urandom(16).hex()  # For security
         )
+
+        webbrowser.open(auth_url)
 
         return {
             "status": "success",

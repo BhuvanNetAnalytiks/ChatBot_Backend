@@ -8,7 +8,7 @@ def create_orchestration(orchestration_json):
 
     # Base Flask app setup
     file_content = (
-        "from flask import Flask, jsonify, request\n"
+        "from flask import Flask, jsonify, request, redirect\n"
         "import os\n"
         "import sys\n\n"
         "sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), \"..\")))\n\n"
@@ -24,6 +24,7 @@ def create_orchestration(orchestration_json):
         endpoint = step["endpoint"]
         methods = step.get("methods", ["GET"])
         parameters = step.get("parameters", [])
+        response_type = step.get("response_type", "json")  # Default to JSON response
 
         # Avoid duplicate imports
         if func_name not in imported_functions:
@@ -67,7 +68,11 @@ def create_orchestration(orchestration_json):
         else:
             file_content += f"    result = {func_name}()\n"
         
-        file_content += "    return jsonify({'result': result})\n\n"
+        # Handle different response types
+        if response_type == "redirect":
+            file_content += "    return result  # Return redirect response directly\n"
+        else:
+            file_content += "    return jsonify({'result': result})\n\n"
 
     # Final Flask app run
     file_content += "if __name__ == '__main__':\n"
