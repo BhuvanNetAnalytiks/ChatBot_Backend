@@ -177,6 +177,23 @@
             "type": "body"
           }
         ]
+      },
+      {
+        "function":"post_to_slack",
+        "module":"main_library.slack_updates",
+        "endpoint":"/slack_updates",
+        "methods":["POST"],
+        "parameters":[{
+          
+            "name": "channel",
+            "type": "body" 
+        },
+        {
+          "name" : "message",
+          "type":"body"
+        }
+      ]
+
       }
   ]
 }
