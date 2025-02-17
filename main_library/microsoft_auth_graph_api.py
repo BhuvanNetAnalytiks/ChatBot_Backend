@@ -15,7 +15,7 @@ REDIRECT_URI = os.getenv('REDIRECT_URI', 'http://localhost:5000/callback')
 AUTHORITY = f'https://login.microsoftonline.com/{TENANT_ID}'
 SCOPE = ['User.Read']
 
-def get_auth_url():
+def get_auth_url_microsoft():
     """
     Get Microsoft authentication URL
     Returns:

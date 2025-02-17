@@ -139,7 +139,7 @@
         ]
       },
       {
-        "function": "get_auth_url",
+        "function": "get_auth_url_microsoft",
         "module": "main_library.microsoft_auth_graph_api",
         "endpoint": "/microsoft/login",
         "methods": ["GET"],
