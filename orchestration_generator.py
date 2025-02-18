@@ -9,10 +9,12 @@ def create_orchestration(orchestration_json):
     # Base Flask app setup
     file_content = (
         "from flask import Flask, jsonify, request, redirect\n"
+        "from flask_cors import CORS\n"
         "import os\n"
         "import sys\n\n"
         "sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), \"..\")))\n\n"
         "app = Flask(__name__)\n\n"
+        "CORS(app)\n\n"
     )
 
     # Track imported functions
