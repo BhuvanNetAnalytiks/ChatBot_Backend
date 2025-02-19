@@ -2,7 +2,8 @@
 *myenv
 
 #ignoring pycache file 
-main_library/*__pycache__/
+main_library/__pycache__/
+
 
 
 #ignoring the environment file
