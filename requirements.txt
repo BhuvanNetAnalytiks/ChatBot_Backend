@@ -14,3 +14,4 @@ numpy
 chromadb
 msal
 flask-cors
+pymilvus
