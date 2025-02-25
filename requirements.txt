@@ -15,3 +15,10 @@ chromadb
 msal
 flask-cors
 pymilvus
+transformers==4.48.3
+mysql-connector-python==9.2.0
+keras-models==0.0.7
+sentence-transformers==3.4.1
+tensorflow==2.18.0
+pandas==1.3.3
+numpy==1.21.2
