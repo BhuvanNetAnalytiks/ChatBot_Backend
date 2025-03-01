@@ -23,8 +23,18 @@ def create_orchestration(orchestration_json):
         "       orchestration_data = json.load(json_file)\n"
         "       print(orchestration_data)  # You can now use this data in your code\n"
         "except FileNotFoundError:\n"
-        "   print(f\"Error: {json_file_path} not found.\")\n"
-    )
+        "   print(f\"Error: {json_file_path} not found.\")\n\n"
+        "@app.route('/get_orchestration', methods=['GET'])\n"
+        "def get_orchestration():\n"
+        "   try:\n"
+        "        with open(json_file_path, 'r') as json_file:\n"
+        "           orchestration_data = json.load(json_file)\n"
+        "           return jsonify(orchestration_data)\n"
+        "   except FileNotFoundError:\n"
+        "        return jsonify({\"error\": \"Orchestration file not found\"}), 404\n"
+        "   except Exception as e:\n"
+        "        return jsonify({\"error\": str(e)}), 500\n"
+            )
 
     # Track imported functions
     imported_functions = set()
