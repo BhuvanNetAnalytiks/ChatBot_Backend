@@ -1,4 +1,4 @@
-├── backend/                               # Python Backend
+├── ChatBot_Backend/                               # Python Backend
 │   ├── main_library/                      # Main library with predefined functions
 │   │   ├── __init__.py
 │   │   ├── function1.py                   # Example function 1

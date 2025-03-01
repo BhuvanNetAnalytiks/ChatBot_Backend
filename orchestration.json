@@ -1,21 +1,24 @@
 {
+  "service": "Service Now",
   "steps": [
     {
-      "function": "db_auth_handler",
-      "module": "main_library.database_auth",
-      "endpoint": "/database_auth",
-      "methods": ["POST"],
+      "function": "semantic_search_and_answer",
+      "module": "main_library.Milvus_VectorDB_extraction",
+      "endpoint": "/fetch_data_from_milvus",
+      "methods": [
+        "GET"
+      ],
       "parameters": [
         {
-          "name": "action",
+          "name": "question",
           "type": "body"
         },
         {
-          "name": "username",
+          "name": "department",
           "type": "body"
         },
         {
-          "name": "password",
+          "name": "top_k",
           "type": "body"
         }
       ]

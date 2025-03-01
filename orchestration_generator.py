@@ -10,11 +10,20 @@ def create_orchestration(orchestration_json):
     file_content = (
         "from flask import Flask, jsonify, request, redirect\n"
         "from flask_cors import CORS\n"
+        "import json\n"
         "import os\n"
+        "from pathlib import Path\n"
         "import sys\n\n"
-        "sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), \"..\")))\n\n"
+        "sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), \"..\")))\n"
+        "json_file_path = Path(__file__).resolve().parents[1] / \"orchestration.json\"\n\n"
         "app = Flask(__name__)\n\n"
         "CORS(app)\n\n"
+        "try:\n"
+        "    with open(json_file_path, 'r') as json_file:\n"
+        "       orchestration_data = json.load(json_file)\n"
+        "       print(orchestration_data)  # You can now use this data in your code\n"
+        "except FileNotFoundError:\n"
+        "   print(f\"Error: {json_file_path} not found.\")\n"
     )
 
     # Track imported functions
