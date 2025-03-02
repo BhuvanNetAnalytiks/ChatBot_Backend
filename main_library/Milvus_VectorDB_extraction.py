@@ -41,7 +41,8 @@ def generate_embedding(text):
         return f"Error generating embedding: {str(e)}"
  
  
-def semantic_search_and_answer(question, department=None, top_k=5):
+def semantic_search_and_answer(question, department=None):
+    top_k=3
     # Ensure Milvus connection is active
     setup_milvus_connection()
     if not connections.has_connection(alias=MILVUS_ALIAS):
