@@ -23,6 +23,15 @@
       ]
     },
     {
+      "function": "get_greeting",
+      "module": "main_library.get_greeting",
+      "endpoint": "/greeting",
+      "methods": [
+        "POST"
+      ],
+      "parameters": []
+    },
+    {
       "function": "semantic_search_and_answer",
       "module": "main_library.Milvus_VectorDB_extraction",
       "endpoint": "/fetch_data_from_milvus",
