@@ -10,7 +10,7 @@ load_dotenv()
 
 # Load the sentence transformer model
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
-MILVUS_HOST = 'localhost'
+MILVUS_HOST = '10.1.6.208'
 MILVUS_PORT = '19530'
 MILVUS_ALIAS = 'default'
 
