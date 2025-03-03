@@ -33,8 +33,24 @@ def create_orchestration(orchestration_json):
         "   except FileNotFoundError:\n"
         "        return jsonify({\"error\": \"Orchestration file not found\"}), 404\n"
         "   except Exception as e:\n"
-        "        return jsonify({\"error\": str(e)}), 500\n"
-            )
+        "        return jsonify({\"error\": str(e)}), 500\n\n"
+        "@app.route('/log_message', methods=['POST'])\n"
+        "def log_message():\n"
+        "   try:\n"
+        "       data = request.get_json()\n"
+        "       message = data.get('message')\n"
+        "       sender = data.get('sender')\n\n"
+        "       print(f\"Received message from {sender}: {message}\")\n"
+        "       return jsonify({\n"
+        "           \"status\": \"success\",\n"
+        "           \"message\": \"Message logged successfully\"\n"
+        "       }), 200\n"
+        "   except Exception as e:\n"
+        "       return jsonify({\n"
+        "           \"status\": \"error\",\n"
+        "           \"error\": str(e)\n"
+        "         }), 500\n\n"
+    )
 
     # Track imported functions
     imported_functions = set()
