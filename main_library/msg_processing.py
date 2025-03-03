@@ -16,9 +16,11 @@ def handle_user_message():
     # Parse user message from UI
     data = request.json
     user_message = data.get('text', '').strip()
-    print(user_message)
+    # print(user_message)
         
     processing_message = user_message
     department = department_classifier.predict_department(processing_message)
-    print(f"Detected Department: {department}")
+    # print(f"Detected Department: {department}")
+    
+    return department
 
