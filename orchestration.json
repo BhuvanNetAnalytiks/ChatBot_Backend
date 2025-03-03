@@ -1,53 +1,14 @@
 {
   "steps": [
     {
-      "function": "create_servicenow_incident",
-      "module": "main_library.create_servicenow_incidenet",
-      "endpoint": "/create_servicenow_incident",
-      "methods": [
-        "POST"
-      ],
-      "parameters": [
-        {
-          "name": "description",
-          "type": "body"
-        },
-        {
-          "name": "urgency",
-          "type": "body"
-        },
-        {
-          "name": "impact",
-          "type": "body"
-        }
-      ]
-    },
-    {
-      "function": "get_greeting",
-      "module": "main_library.get_greeting",
-      "endpoint": "/greeting",
+      "function": "handle_user_message",
+      "module": "main_library.msg_processing",
+      "endpoint": "/handle_user_message",
       "methods": [
         "POST"
       ],
       "parameters": []
-    },
-    {
-      "function": "semantic_search_and_answer",
-      "module": "main_library.Milvus_VectorDB_extraction",
-      "endpoint": "/fetch_data_from_milvus",
-      "methods": [
-        "POST"
-      ],
-      "parameters": [
-        {
-          "name": "question",
-          "type": "body"
-        },
-        {
-          "name": "department",
-          "type": "body"
-        }
-      ]
     }
   ]
 }
+  
