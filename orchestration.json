@@ -1,13 +1,19 @@
 {
   "steps": [
     {
-      "function": "handle_user_message",
-      "module": "main_library.msg_processing",
-      "endpoint": "/handle_user_message",
+      "function": "department_detection",
+      "module": "main_library.department_classifier",
+      "endpoint": "/department_detection",
       "methods": [
         "POST"
       ],
-      "parameters": []
+      "parameters": [
+        {
+
+         "name": "text",
+         "type": "body"
+        }
+      ]
     }
   ]
 }
