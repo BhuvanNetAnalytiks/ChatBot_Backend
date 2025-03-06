@@ -9,7 +9,7 @@ admin_email = os.getenv('ZENDESK_EMAIL')
 api_token = os.getenv('ZENDESK_API_KEY')
 
 
-def create_zendesk_ticket(subject, description, priority='normal'):
+def create_zendesk_ticket(subject, description, priority='medium'):
     url = f"{instance_url}/api/v2/tickets.json"
     headers = {
         "Content-Type": "application/json"
