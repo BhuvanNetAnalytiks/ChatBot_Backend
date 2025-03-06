@@ -4,6 +4,9 @@
 #ignoring pycache file 
 main_library/__pycache__/
 
+#ignoring Orchecstration.json File
+orchestration.json
+
 
 
 #ignoring the environment file
