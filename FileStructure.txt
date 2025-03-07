@@ -1,26 +1,36 @@
 ├── ChatBot_Backend/                               # Python Backend
-│   ├── main_library/                      # Main library with predefined functions
+│   ├── main_library/                              # Main library with predefined functions
 │   │   ├── __init__.py
-│   │   ├── function1.py                   # Example function 1
-│   │   ├── function2.py                   # Example function 2
-│   │   ├── create_jira_incident.py        # To create ticket in Jira
-│   │   ├── create_servicenow_incident.py  # To create ticket in Servicenow
-│   │   ├── create_zendesk_incident.py     # To create ticket in Zendesk
-│   │   ├── llm_claude.py                  # LLM Selected Claude
-│   │   ├── llm_gemini_flash.py            # LLM Selected Gemini_Flash
-│   │   ├── llm_openai.py                  # LLM Selected Openai
-│   │   ├── upload_files_chroma.py         # Vectordata Selected Chroma
-│   │   ├── upload_files_faiss.py          # Vectordata Selected Faiss
-│   │   ├── upload_files_pinecone.py       # Vectordata Selected Pinecone
-│   │   ├── upload_files_weaviate.py       # Vectordata Selected Weaviate
-│   │   ├── view_zendesk_incident.py       # To view ticket details of Zendesk
-│   │   ├── view_servicenow_incident.py    # To view ticket details of Servicenow
-│   │   │         
-│   │   └── utils.py                       # Utility functions
+│   │   ├── create_jira_incident.py                # To create ticket in Jira
+│   │   ├── create_servicenow_incident.py          # To create ticket in Servicenow
+│   │   ├── create_zendesk_incident.py             # To create ticket in Zendesk
+│   │   ├── database_auth.py                       # Handles user authentication with MySQL.
+│   │   ├── departmentSelection.py                
+│   │   ├── department_classifier.py               # Classifies user messages into departments using a trained model.
+│   │   ├── function1.py                           # Example function 1
+│   │   ├── function2.py                           # Example function 2
+│   │   ├── get_greeting.py                        # Greeting 
+│   │   ├── jwt_auth.py                            # Handles JWT authentication, token generation, verification, and cookie management.
+│   │   ├── ldap_auth.py                           # Authenticates a user against an LDAP server.
+│   │   ├── llm_claude.py                          # LLM Selected Claude
+│   │   ├── llm_gemini_flash.py                    # LLM Selected Gemini_Flash
+│   │   ├── llm_openai.py                          # LLM Selected OpenAI
+│   │   ├── microsoft_auth_graph_api.py            # Handles Microsoft OAuth authentication and retrieves user details.
+│   │   ├── Milvus_VectorDB_extraction.py          # Performs semantic search on Milvus and generates answers using Gemini LLM.
+│   │   ├── model.py                               # Classifies a given query into a department using a trained neural network and sentence embeddings.
+│   │   ├── slack_updates.py                       #Sends a message to a specified Slack channel using the Slack API.
+│   │   ├── upload_files_chroma.py                 # Vectordata Selected Chroma
+│   │   ├── upload_files_faiss.py                  # Vectordata Selected Faiss
+│   │   ├── upload_files_pinecone.py               # Vectordata Selected Pinecone
+│   │   ├── upload_files_weaviate.py               # Vectordata Selected Weaviate
+│   │   ├── utils.py                               # Utility functions
+│   │   ├── view_jira_incident.py                  # To view ticket details of Jira
+│   │   ├── view_servicenow_incident.py            # To view ticket details of Servicenow
+│   │   ├── view_zendesk_incident.py               # To view ticket details of Zendesk
 │   ├── orchestrations/                    
 │   │   ├── generated_orchestration.py     # Dynamically generated orchestration files
-│   ├── app.py                             # Flask/FastAPI server
-│   ├── orchestration.json                 # Orchestration configuration file (corrected extension)
+│   ├── app.py                             # FastAPI server
+│   ├── orchestration.json                 # Orchestration configuration file
 │   ├── orchestration_generator.py         # Logic to create new Python files
 │   ├── .env                               # Environment variables file
 │   └── requirements.txt                   # Dependencies for the backend
