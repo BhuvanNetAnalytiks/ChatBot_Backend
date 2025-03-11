@@ -20,3 +20,6 @@ mysql-connector-python==9.2.0
 keras-models==0.0.7
 tensorflow==2.18.0
 pandas
+openai-whisper
+gtts
+tf-keras
