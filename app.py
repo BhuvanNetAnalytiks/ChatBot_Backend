@@ -3,7 +3,11 @@ from flask import Flask, request, jsonify
 import os
 import json
 from orchestration_generator import create_orchestration
+from flask import Flask
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 ORCHESTRATION_JSON_PATH = os.path.join(os.path.dirname(__file__), "orchestration.json")
 
 @app.route("/api/save_orchestration", methods=["POST"])
@@ -22,5 +26,7 @@ def save_orchestration():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
  
  

@@ -10,17 +10,15 @@ load_dotenv()
 
 # Load the sentence transformer model
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
-MILVUS_HOST = '10.1.6.208'
+MILVUS_HOST = '10.1.4.92'
 MILVUS_PORT = '19530'
-MILVUS_ALIAS = 'default'
-
-
+# MILVUS_ALIAS = 'default'
  
 def setup_milvus_connection():
     """ Setup the Milvus connection """
     try:
         connections.connect(
-            alias=MILVUS_ALIAS,
+            alias='default',
             host=MILVUS_HOST,
             port=MILVUS_PORT
         )
@@ -30,7 +28,7 @@ def setup_milvus_connection():
  
 def ensure_milvus_connection():
     """ Ensure Milvus is connected before performing any operations. """
-    if not connections.has_connection(alias=MILVUS_ALIAS):
+    if not connections.has_connection(alias='default'):
         setup_milvus_connection()
  
 def generate_embedding(text):
@@ -41,14 +39,14 @@ def generate_embedding(text):
         return f"Error generating embedding: {str(e)}"
  
  
-def semantic_search_and_answer(question, department='it'):
-    top_k=3
+def semantic_search_and_answer(question, department):
+    top_k = 3
     # Ensure Milvus connection is active
     setup_milvus_connection()
-    if not connections.has_connection(alias=MILVUS_ALIAS):
+    if not connections.has_connection(alias='default'):
         setup_milvus_connection()
     # Check again to be sure the connection was established
-    if not connections.has_connection(alias=MILVUS_ALIAS):
+    if not connections.has_connection(alias='default'):
         return "Milvus connection could not be established."
  
     if not department:

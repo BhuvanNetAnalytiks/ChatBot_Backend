@@ -2,15 +2,19 @@ from dotenv import load_dotenv
 import os
 import requests
 
-# Load environment variables
-load_dotenv()  
+# # Load environment variables
+# load_dotenv()  
 
-# ServiceNow API credentials and URL
-SERVICE_NOW_INSTANCE = os.getenv('SERVICE_NOW_INSTANCE')
-SERVICE_NOW_USER = os.getenv('SERVICE_NOW_USER')
-SERVICE_NOW_PASSWORD = os.getenv('SERVICE_NOW_PASSWORD')
+# # ServiceNow API credentials and URL
+# SERVICE_NOW_INSTANCE = os.getenv('SERVICE_NOW_INSTANCE')
+# SERVICE_NOW_USER = os.getenv('SERVICE_NOW_USER')
+# SERVICE_NOW_PASSWORD = os.getenv('SERVICE_NOW_PASSWORD')
 
-def view_ticket_detailed(number=None, sys_id=None):
+SERVICE_NOW_INSTANCE = 'https://dev275521.service-now.com/'
+SERVICE_NOW_USER = 'admin'
+SERVICE_NOW_PASSWORD = 'Sannidhi@123'
+
+def view_ticket_detailed(number=None):
     """
     View detailed ServiceNow ticket information
     Args:
@@ -50,8 +54,6 @@ def view_ticket_detailed(number=None, sys_id=None):
     # Add query parameters based on input
     if number:
         params['sysparm_query'] = f'number={number}'
-    elif sys_id:
-        url = f'{url}/{sys_id}'
     else:
         return {'error': 'Please provide either number or sys_id'}
 

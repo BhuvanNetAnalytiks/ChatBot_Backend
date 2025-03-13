@@ -37,7 +37,7 @@ def create_orchestration(orchestration_json):
         "       data = request.get_json()\n"
         "       message = data.get('message')\n"
         "       sender = data.get('sender')\n\n"
-        "       logging.info(f\"Received message from {sender}: {message}\")\n"
+        "       print(f\"Received message from {sender}: {message}\")\n"
         "       return jsonify({\n"
         "           \"status\": \"success\",\n"
         "           \"message\": \"Message logged successfully\"\n"

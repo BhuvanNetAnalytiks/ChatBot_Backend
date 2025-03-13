@@ -3,19 +3,23 @@ import os
 import requests
 
 # Load environment variables
-load_dotenv()  # Add this line to ensure env variables are loaded
+# load_dotenv('key.env')  # Add this line to ensure env variables are loaded
 
 # ServiceNow API credentials and URL
-SERVICE_NOW_INSTANCE = os.getenv('SERVICE_NOW_INSTANCE')
-SERVICE_NOW_USER = os.getenv('SERVICE_NOW_USER')
-SERVICE_NOW_PASSWORD = os.getenv('SERVICE_NOW_PASSWORD')
+# SERVICE_NOW_INSTANCE = os.getenv('SERVICE_NOW_INSTANCE')
+# SERVICE_NOW_USER = os.getenv('SERVICE_NOW_USER')
+# SERVICE_NOW_PASSWORD = os.getenv('SERVICE_NOW_PASSWORD')
+
+SERVICE_NOW_INSTANCE = 'https://dev275521.service-now.com/'
+SERVICE_NOW_USER = 'admin'
+SERVICE_NOW_PASSWORD = 'Sannidhi@123'
 
 def create_servicenow_incident(description="Some problem", urgency='2', impact='2'):
-    # Ensure the URL is properly formatted
-    if not SERVICE_NOW_INSTANCE.startswith('https://'):
-        url = f'https://{SERVICE_NOW_INSTANCE}/api/now/table/incident'
-    else:
-        url = f'{SERVICE_NOW_INSTANCE}/api/now/table/incident'
+    # # Ensure the URL is properly formatted
+    # if not SERVICE_NOW_INSTANCE.startswith('https://'):
+    #     url = f'https://{SERVICE_NOW_INSTANCE}/api/now/table/incident'
+    # else:
+    url = f'{SERVICE_NOW_INSTANCE}/api/now/table/incident'
 
     headers = {
         'Content-Type': 'application/json',
