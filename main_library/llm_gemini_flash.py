@@ -3,7 +3,7 @@ import os
 # from dotenv import load_dotenv
 # load_dotenv('key.env')
 
-genai.configure(api_key="AIzaSyAwgKHTpiDagE8MvbC6WuHZ5n1i7yz5pEk")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 def query_gemini_llm(question, context):
     """Enhanced Gemini prompt for more focused answers"""
