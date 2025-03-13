@@ -33,3 +33,4 @@ def create_zendesk_ticket(subject, description, priority='medium'):
         return response.json()
     else:
         return {"error": response.status_code, "message": response.text}
+
